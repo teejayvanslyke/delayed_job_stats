@@ -1,0 +1,16 @@
+= delayed_job_stats
+
+== Install
+
+    script/plugin install git://github.com/teejayvanslyke/delayed_job_stats.git
+
+== Usage
+
+=== Locally (via Rake)
+
+    rake jobs:stats
+
+=== Remotely (via Capistrano)
+
+    cap delayed_job:stats
+
