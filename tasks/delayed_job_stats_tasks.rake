@@ -8,15 +8,15 @@ namespace :jobs do
     end
 
     def jobs_failed
-      Delayed::Job.find(:all, :conditions => 'failed_at != NULL').count
+      Delayed::Job.find(:all, :conditions => 'failed_at != 0').count
     end
 
     def jobs_run
-      Delayed::Job.find(:all, :conditions => 'run_at != NULL').count
+      Delayed::Job.find(:all, :conditions => 'run_at != 0').count
     end
 
     def workers
-      Delayed::Job.find_by_sql("SELECT DISTINCT locked_by FROM delayed_jobs").count
+      Delayed::Job.find_by_sql("SELECT DISTINCT locked_by FROM delayed_jobs WHERE locked_at != NULL").count
     end
 
     puts "Jobs remaining: #{jobs_remaining}"
