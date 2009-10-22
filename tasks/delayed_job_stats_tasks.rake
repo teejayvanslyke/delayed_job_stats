@@ -12,7 +12,7 @@ namespace :jobs do
     end
 
     def jobs_run
-      Delayed::Job.find(:all, :conditions => 'run_at != 0').count
+      Delayed::Job.find(:all, :conditions => 'attempts > 0').count
     end
 
     def workers
