@@ -14,3 +14,10 @@
 
     cap delayed_job:stats
 
+=== Example output
+
+    Jobs remaining: 803
+    Jobs run:       0
+    Jobs failed:    0
+    Workers:        1
+
